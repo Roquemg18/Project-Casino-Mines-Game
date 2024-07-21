@@ -1,26 +1,59 @@
-# Buscaminas
+# Busca Minas
 
-## Objetivo:
-Programar un juego de Buscaminas en el que el jugador despeje casillas para encontrar casillas con valor 1 y acumular puntos, mientras evita las minas que provocarán la pérdida de la partida.
+## Objetivo
+Busca Minas es un juego de estrategia donde el jugador debe evitar las minas ocultas en un tablero mientras intenta despejar todas las casillas seguras. El juego combina elementos de azar y lógica, permitiendo al jugador apostar y ganar basándose en su habilidad para navegar el campo minado.
 
-El juego debe permitir guardar la partida en un archivo para retomarlo luego.
+## Características del Juego
 
-La creación del juego debe permitir cambiar la dificultad (la cantidad de minas), y las dimensiones del tablero.
+- Tablero de 5x5 casillas
+- Número variable de minas (1-24)
+- Sistema de apuestas con multiplicadores dinámicos
+- Puntuación basada en casillas despejadas
+- Registro de puntuaciones altas
 
-## Reglas del Buscaminas:
-El Buscaminas es un juego en el que se presenta una cuadrícula de casillas. Algunas casillas contienen minas, mientras que otras contienen un valor que indica la cantidad de minas adyacentes. El objetivo del juego es despejar todas las casillas que no contienen minas sin activar una mina.
+## Cómo Jugar
 
-## Instrucciones:
+1. Inicia el juego ejecutando el programa.
+2. Ingresa la cantidad de dinero que deseas apostar.
+3. Elige la cantidad de minas que quieres en el tablero (1-24).
+4. El juego mostrará un tablero vacío.
+5. En cada turno:
+   - Ingresa una coordenada X (1-5) y Y (A-E) para despejar una casilla.
+   - Si la casilla está libre, ganarás puntos y el multiplicador aumentará.
+   - Si encuentras una mina, pierdes la partida y tu apuesta.
+6. El juego termina cuando:
+   - Encuentras una mina (pierdes).
+   - Despejas todas las casillas seguras (ganas).
 
- * Debes crear una matriz (por ejemplo, 10x10) para representar el tablero de Buscaminas. Inicializa la matriz con algunos valores aleatorios, incluyendo minas (por ejemplo, 0 para casillas vacías y 1 para minas).
- * El juego debe mostrar la cuadrícula al jugador y permitirle ingresar coordenadas (fila y columna) para despejar una casilla.
- * Después de que el jugador despeje una casilla, el programa debe verificar si el valor de esa casilla es 1 o 0. Si es 1, el jugador acumula puntos. Si es 0, el jugador pierde la partida y el juego muestra todas las casillas en el tablero, indicando con "X" las casillas que el jugador acertó.
- * El juego debe continuar hasta que el jugador haya despejado todas las casillas con valor 1 o haya encontrado una mina (casilla con valor 1).
- * Al final del juego, muestra la puntuación acumulada por el jugador.
+## Puntuación y Ganancias
 
-## Explicación del Juego:
+- Cada casilla despejada con éxito suma 100 puntos.
+- El multiplicador de ganancias aumenta con cada casilla despejada.
+- Tus ganancias se calculan multiplicando tu apuesta inicial por el multiplicador actual.
 
-El Buscaminas es un juego de lógica en el que el jugador debe despejar casillas en una cuadrícula para encontrar casillas con valor 1 y acumular puntos. Si el jugador despeja una casilla con valor 0, la partida se pierde y el juego muestra todas las casillas, indicando con "X" las casillas que el jugador había acertado antes de perder.
+## Registro de Puntuaciones
 
-El jugador debe ser estratégico al elegir las casillas para despejar y tratar de evitar las minas. El objetivo es acumular la mayor cantidad de puntos posible sin encontrar una mina.
+Al finalizar el juego, podrás guardar tu puntuación. El sistema mostrará las 5 mejores puntuaciones registradas.
 
+## Aspectos Técnicos
+
+- Programado en C
+- Utiliza matrices dinámicas para representar el tablero
+- Implementa manejo de archivos para guardar y mostrar puntuaciones
+- Incluye gestión de memoria para prevenir fugas
+
+## Compilación y Ejecución
+
+Para compilar el juego, asegúrate de tener un compilador de C instalado y ejecuta:
+
+```
+gcc -o busca_minas busca_minas.c
+```
+
+Para ejecutar el juego:
+
+```
+./busca_minas
+```
+
+¡Disfruta jugando a Busca Minas y buena suerte con tus apuestas!
